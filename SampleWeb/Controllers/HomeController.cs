@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using RestCountries.Integration.Contracts;
 using SampleWeb.Models;
 
@@ -12,11 +9,9 @@ namespace SampleWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly IRestCountriesService countriesService;
-        public HomeController(ILogger<HomeController> logger, IRestCountriesService countriesService)
+        public HomeController(IRestCountriesService countriesService)
         {
-            _logger = logger;
             this.countriesService = countriesService;
         }
 

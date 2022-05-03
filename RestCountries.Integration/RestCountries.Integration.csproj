@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -7,6 +7,7 @@
     <Copyright>Tsessebe</Copyright>
     <Description>A http client to consume the restcountries.com API.</Description>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <RepositoryUrl>https://github.com/Tsessebe/RestCountries.Integration</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
