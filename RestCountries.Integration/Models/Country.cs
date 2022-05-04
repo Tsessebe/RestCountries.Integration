@@ -22,7 +22,7 @@ namespace RestCountries.Integration.Models
         {
             get
             {
-                if (DialingCode.Root == null)
+                if (DialingCode?.Root == null)
                 {
                     return new List<string>();
                 }

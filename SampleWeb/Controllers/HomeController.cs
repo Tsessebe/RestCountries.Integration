@@ -1,9 +1,11 @@
-﻿using System.Diagnostics;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RestCountries.Integration.Contracts;
+using RestCountries.Integration.Models;
 using SampleWeb.Models;
 
 namespace SampleWeb.Controllers
@@ -26,6 +28,8 @@ namespace SampleWeb.Controllers
             };
 
             var jsonString = JsonConvert.SerializeObject(model.Countries);
+
+            var countryList = JsonConvert.DeserializeObject<IEnumerable<Country>>(jsonString);
 
             return View(model);
         }
