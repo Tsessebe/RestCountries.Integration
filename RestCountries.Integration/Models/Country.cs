@@ -22,7 +22,14 @@ namespace RestCountries.Integration.Models
         {
             get
             {
-                return DialingCode.Suffixes.Select(_ => DialingCode.Root.Equals("+1", StringComparison.InvariantCultureIgnoreCase) ? $"{DialingCode.Root} {_}" : $"{DialingCode.Root}{_}").ToList();
+                if (DialingCode.Root == null)
+                {
+                    return new List<string>();
+                }
+
+                var result = DialingCode.Suffixes.Select(_ => DialingCode.Root.Equals("+1", StringComparison.InvariantCultureIgnoreCase) ? $"{DialingCode.Root} {_}" : $"{DialingCode.Root}{_}").ToList();
+                
+                return result;
             }
         }
 

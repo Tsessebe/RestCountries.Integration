@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using RestCountries.Integration.Contracts;
 using SampleWeb.Models;
 
@@ -18,10 +19,13 @@ namespace SampleWeb.Controllers
         public async Task<IActionResult> Index()
         {
             var countries = await countriesService.GetAllAsync();
+            
             var model = new HomeViewModel
             {
                 Countries = countries.ToList(),
             };
+
+            var jsonString = JsonConvert.SerializeObject(model.Countries);
 
             return View(model);
         }
