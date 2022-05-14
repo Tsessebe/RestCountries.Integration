@@ -29,7 +29,7 @@ namespace SampleWeb.Controllers
 
             var jsonString = JsonConvert.SerializeObject(model.Countries);
 
-            var countryList = JsonConvert.DeserializeObject<IEnumerable<Country>>(jsonString);
+            var _ = JsonConvert.DeserializeObject<IEnumerable<Country>>(jsonString);
 
             return View(model);
         }
